@@ -6,8 +6,9 @@ let racArray = ['The raccoon bites your face', 'Raccoon cavalry charge!!', 'The 
 function round() {
     inquirer
         .prompt([{
-            type: 'input',
-            message: 'Guess a number between 1 and 5.',
+            type: 'checkbox',
+            message: 'Holy @$%! a raccoon is attacking you guess a number between 1 and 5!',
+            choices: ['1', '2', '3', '4', '5'],
             name: 'userAttack'
         }, ])
         .then(function (data) {
