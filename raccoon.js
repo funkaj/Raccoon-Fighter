@@ -7,10 +7,11 @@ function round() {
     inquirer
         .prompt([{
             type: 'checkbox',
-            message: 'Holy @$%! a raccoon is attacking you guess a number between 1 and 5!',
+            message: 'Holy @$%! a raccoon is attacking you! Guess a number between 1 and 5!',
             choices: ['1', '2', '3', '4', '5'],
             name: 'userAttack'
-        }, ])
+        },
+        ])
         .then(function (data) {
             let raccoonChoices = [1, 2, 3, 4, 5]
             let raccoonAttack = raccoonChoices[Math.floor(Math.random() * raccoonChoices.length)]
@@ -38,12 +39,12 @@ function check() {
         line()
         console.log('You have been beaten by a raccoon! How sad.')
         line()
-        process.exit()
+        rematch()
     } else if (racHp <= 0) {
         line()
         console.log('You live to fight another day!')
         line()
-        process.exit()
+        rematch()
     } else {
         line()
         console.log(`You have ${userHp}Hp left. The raccoon has ${racHp}Hp left`)
@@ -54,6 +55,27 @@ function check() {
 
 function line() {
     console.log('==============================================================')
+}
+function rematch() {
+    inquirer
+        .prompt([{
+            type: 'checkbox',
+            message: 'Would you like a rematch?',
+            choices: ['yes', 'no'],
+            name: 'fight'
+        }])
+        .then(function (data){
+    if (String(data.fight) === 'yes') {
+    userHp = parseInt(20)
+    racHp = parseInt(10)
+    line()
+    console.log('Lets Do This!!!')
+    line()
+    round()
+    } else {
+        process.exit()
+    }
+})
 }
 
 round()
