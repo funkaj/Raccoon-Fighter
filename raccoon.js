@@ -3,7 +3,7 @@ let racHp = parseInt(10)
 let inquirer = require('inquirer')
 let turn = 0
 let prompt = ['Holy @$%! a raccoon is attacking you! Guess a number between 1 and 5!', 'Keep the attacks up!']
-let racArray = ['The raccoon bites your face', 'Raccoon cavalry charge!!', 'The raccoon throws a trash can at you', 'The raccoon bites your butt', 'The raccoon insults your mothers intelligence']
+let racArray = ['The raccoon bites your face!', 'Raccoon cavalry charge!!', 'The raccoon throws a trash can at you!', 'The raccoon bites your foot!', 'The raccoon insults your mothers intelligence!']
 // main game function logic
 function round() {
     inquirer
