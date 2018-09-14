@@ -9,18 +9,7 @@ function round() {
     inquirer
         .prompt([{
             type: 'checkbox',
-<<<<<<< HEAD
             message: 'Holy Moley! a raccoon is attacking you guess a number between 1 and 5!',
-=======
-            message: function(){
-                if (turn === 0) {
-                    console.log(prompt[0])
-                    turn++
-                } else {
-                    console.log(prompt[1])
-                }
-            },
->>>>>>> 374adde957850754fa5039f5262aecddf0d2251e
             choices: ['1', '2', '3', '4', '5'],
             name: 'userAttack'
         },
