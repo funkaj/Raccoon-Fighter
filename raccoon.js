@@ -7,7 +7,7 @@ function round() {
     inquirer
         .prompt([{
             type: 'checkbox',
-            message: 'Holy @$%! a raccoon is attacking you guess a number between 1 and 5!',
+            message: 'Holy Moley! a raccoon is attacking you guess a number between 1 and 5!',
             choices: ['1', '2', '3', '4', '5'],
             name: 'userAttack'
         }, ])
@@ -36,7 +36,7 @@ function round() {
 function check() {
     if (userHp <= 0) {
         line()
-        console.log('You have been beaten by a raccoon! How sad.')
+        console.log('You have been beaten by a raccoon! How sad for you.')
         line()
         process.exit()
     } else if (racHp <= 0) {
