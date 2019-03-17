@@ -3,21 +3,14 @@ let racHp = parseInt(10)
 let inquirer = require('inquirer')
 let turn = 0
 let prompt = ['Holy @$%! a raccoon is attacking you! Guess a number between 1 and 5!', 'Keep the attacks up!']
-let racArray = ['The raccoon bites your face', 'Raccoon cavalry charge!!', 'The raccoon throws a trash can at you', 'The raccoon bites your butt', 'The raccoon insults your mothers intelligence']
+let racArray = ['The raccoon bites your face!', 'Raccoon cavalry charge!!', 'The raccoon throws a trash can at you!', 'The raccoon bites your foot!', 'The raccoon insults your mothers intelligence!']
 // main game function logic
  function round() {
 	setTimeout(() => {
     inquirer
         .prompt([{
             type: 'checkbox',
-            message: function(){
-                if (turn === 0) {
-                    console.log(prompt[0])
-                    turn++
-                } else {
-                    console.log(prompt[1])
-                }
-            },
+            message: 'Holy Moley! a raccoon is attacking you guess a number between 1 and 5!',
             choices: ['1', '2', '3', '4', '5'],
             name: 'userAttack'
         },
@@ -47,7 +40,7 @@ let racArray = ['The raccoon bites your face', 'Raccoon cavalry charge!!', 'The 
 function check() {
     if (userHp <= 0) {
         line()
-        console.log('You have been beaten by a raccoon! How sad.')
+        console.log('You have been beaten by a raccoon! How sad for you.')
         line()
         rematch()
     } else if (racHp <= 0) {
