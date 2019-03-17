@@ -1,0 +1,7 @@
+{
+	"name": "raccoon-fighter",
+	"version": "0.1.0",
+	"devDependencies": {
+		"inquirer": "6.2.2"
+	}
+}
