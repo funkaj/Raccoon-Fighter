@@ -2,7 +2,7 @@ let userHp = parseInt(20)
 let racHp = parseInt(10)
 let inquirer = require('inquirer')
 let turn = 0
-let prompt = ['Holy @$%! a raccoon is attacking you! Guess a number between 1 and 5!', 'Keep the attacks up!']
+let prompt = ['Holy @$%! a raccoon is attacking you! Guess a number between 1 and 5!', 'Keep the attacks up to defeat the raccoon!']
 let racArray = ['The raccoon bites your face!', 'Raccoon cavalry charge!!', 'The raccoon throws a trash can at you!', 'The raccoon bites your foot!', 'The raccoon insults your mothers intelligence!']
 // main game function logic
  function round() {
@@ -10,7 +10,7 @@ let racArray = ['The raccoon bites your face!', 'Raccoon cavalry charge!!', 'The
     inquirer
         .prompt([{
             type: 'checkbox',
-            message: 'Holy Moley! a raccoon is attacking you guess a number between 1 and 5!',
+            message: 'Holy Moley! A raccoon is attacking you! Guess a number between 1 and 5! \n Use the arrow keys to highlight your number. \n Press the spacbar to make your selection \n Then hit enter to see if you hit. \n Guess the correct number to keep the attacks up to defeat the raccoon!',
             choices: ['1', '2', '3', '4', '5'],
             name: 'userAttack'
         },
@@ -23,7 +23,7 @@ let racArray = ['The raccoon bites your face!', 'Raccoon cavalry charge!!', 'The
             if (attack == raccoonAttack) {
                 racHp = racHp - attack
                 line()
-                console.log(`Hit ${attack} damage to the raccoon!`)
+                console.log(`You hit for ${attack} damage to the raccoon!`)
                 line()
                 check()
             } else if (attack != raccoonAttack) {
@@ -40,12 +40,12 @@ let racArray = ['The raccoon bites your face!', 'Raccoon cavalry charge!!', 'The
 function check() {
     if (userHp <= 0) {
         line()
-        console.log('You have been beaten by a raccoon! How sad for you.')
+        console.log('You LOST to a racoon! How sad for you. :(')
         line()
         rematch()
     } else if (racHp <= 0) {
         line()
-        console.log('You live to fight another day!')
+        console.log('You WON! You live to fight another day!')
         line()
         rematch()
     } else {
